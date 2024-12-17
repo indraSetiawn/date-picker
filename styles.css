@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+
+
+:root {
+  --f1: 'Permanent Marker';
+  --f2: "Rammetto One", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  background-color: #f3f3f3;
+}
+
+.calendar-container {
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 1rem;
+  width: 25%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.36);
+}
+
+.date-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 0.7rem;
+}
+
+.date-input input {
+  padding: 0.5rem 0 0.5rem 1rem;
+  border: 2px solid #000;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: none;
+}
+
+.date-input input::placeholder {
+  color: #000;
+}
+
+.date-input button {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: absolute;
+  right: 5rem;
+  top: 0px;
+}
+
+.date-input button i {
+  font-size: 1.88rem;
+  cursor: pointer;
+}
+
+.calendar-header {
+  text-align: center;
+}
+
+.calendar-header span:nth-child(2) {
+  margin: 0 1rem;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.calendar-header span:nth-child(1),
+.calendar-header span:nth-child(3) {
+  font-family: var(--f2);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.calendar {
+  border: 1px solid #000;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 5px;
+}
+
+.calender-grid {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calender-grid thead th {
+  border: none;
+  border-bottom: 2px solid #000;
+}
+
+.calender-grid th,
+.calender-grid td {
+  width: 14.28%;
+  height: 2rem;
+  border: 0.1px solid #000;
+  text-align: center;
+  cursor: pointer;
+}
+
+.calender-grid td:nth-child(29) {
+  border-bottom-left-radius: 10px;
+}
+
+.calender-grid td:not(:empty):hover {
+  background-color: #ccc;
+}
+
+
+@media screen and (max-width: 480px) {
+
+  /* Gaya khusus untuk mobile portrait */
+  body {
+    font-size: 1rem;
+  }
+
+  .calendar-container{
+    width: 72%;
+  }
+
+  .date-input button  {
+    top: 0px;
+  }
+  
+  .date-input button i{
+    font-size: 1.89rem;
+  }
+}
